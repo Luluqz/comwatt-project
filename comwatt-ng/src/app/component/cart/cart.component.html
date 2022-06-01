@@ -1,0 +1,54 @@
+<div class="row wrapper-cart">
+    <div class="col-lg-12 col-md-12 col-12">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="display-5 mb-2 text-center">Mon panier</h6>
+                <p class="mb-5 text-center">
+                    <i *ngIf="!cart.totalQuantity" class="txt-green" style="font-weight: bold;">0</i>
+                    <i *ngIf="cart.totalQuantity > 0" class="txt-green" style="font-weight: bold;">{{cart.totalQuantity}}</i> produits dans votre panier <br/>
+                    <button (click)="deleteCart()" *ngIf="cart && cart.items && cart.items.length > 0" class="btn text-white bg-orange btn-sm mt-1"><i class="fas fa-trash"></i> Tout supprimer</button>
+                </p>
+                <table id="shoppingCart" class="table table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="width:60%">Produit</th>
+                            <th style="width:12%">Prix</th>
+                            <th style="width:10%">Quantité</th>
+                            <th style="width:16%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cart.items">
+                            <td data-th="Product">
+                                <div class="row">
+                                    <div class="col-md-12 text-left mt-sm-2">
+                                        <p style="margin-bottom: 0;">{{item.title | slice:0:20}} ..</p>
+                                        <em class="font-weight-light">{{item.productType | eType}}</em>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Price">{{item.price | currency:'EUR':'symbol'}}</td>
+                            <td data-th="Quantity">
+                                <input type="number" class="form-control text-center" [(ngModel)]="item.quantity" (change)="onInputQuantityChange($event, item)" [min]="0">
+                            </td>
+                            <td class="actions" data-th="">
+                                <div class="text-right">
+                                    <button class="btn btn-white border-secondary bg-white btn-md mb-2" (click)="deleteCartObj(item)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-1" *ngIf="cart.items && cart.items.length > 0">
+        <div class="card">
+            <div class="card-body text-end" style="font-size: 18px;">
+                Total : <span style="font-weight: 500;">{{cart.totalPrice | currency:'EUR':'symbol'}}</span>
+            </div>
+        </div>
+    </div>
+</div>

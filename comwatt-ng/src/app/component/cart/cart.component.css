@@ -1,0 +1,14 @@
+.wrapper-cart {
+    max-height: calc(100vh - 94px);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
+}
+
+.wrapper-cart::-webkit-scrollbar {
+    display: none;
+  }
+
+th {
+    font-weight: 500;
+}

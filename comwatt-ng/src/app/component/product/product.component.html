@@ -1,0 +1,42 @@
+<div class="card" *ngIf="product">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="https://picsum.photos/275/450/?blur" class="img-fluid" crossorigin="anonymous">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p *ngIf="product.country != 'FRA'"><i>Titre original: "{{product.originalTitle}}"</i></p>
+          <ul class="list-group list-group-flush" style="margin-bottom: 10px;">
+            <li class="list-group-item" style="padding-left: 0;"><i>Genre: </i> <span *ngFor="let genre of product.genre"><span class="badge bg-green rounded-pill" style="margin-right: 3px;">{{genre}}</span></span></li>
+            <li class="list-group-item" style="padding-left: 0;"><i>Année de parution: </i>{{product.year | date:'yyyy'}}</li>
+            <li class="list-group-item" style="padding-left: 0;"><i>Pays d'origine: </i>{{ countries.getName(product.country, "fr") }}</li>
+            <li class="list-group-item" style="padding-left: 0;"><i>Format: </i>{{ product.productType | eType }}</li>
+          </ul>
+          <p><u>Description:</u><br/>{{product.description}}</p>
+          <p>
+              <u>Note</u> : 
+              <i *ngFor="let i of [].constructor(product.ranking)" class="fa-solid fa-star txt-orange"></i>
+              <i *ngFor="let i of [].constructor(10 - product.ranking)" class="fa-regular fa-star txt-orange"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-footer">
+                <div class="row">
+                    <label for="" class="col-sm-6 col-form-label"><u>Prix</u>: {{product.price | currency:'EUR':'symbol' }}</label>
+                    <div class="col-sm-6">
+                      <button class="btn text-white bg-orange btn-md float-end ms-1" (click)="sendCartObj(product, quantity)">
+                        <i class="fa-solid fa-cart-arrow-down"></i> Ajouter au panier
+                    </button>
+                    <input type="number" class="form-control text-center float-end" value="1" style="width: 65px;" [(ngModel)]="quantity" (change)="onInputQuantityChange($event)" [min]="1">
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <p *ngIf="!product">La ressource demandée n'existe pas.</p>
+  <button routerLink="/list" class="btn txt-green btn-light mt-2" style="border-color: rgb(138, 197, 58);">Retour à la liste</button>

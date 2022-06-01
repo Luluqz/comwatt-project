@@ -1,0 +1,10 @@
+.wrapper-product {
+    max-height: calc(100vh - 94px);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
+}
+
+.wrapper-product::-webkit-scrollbar {
+    display: none;
+  }

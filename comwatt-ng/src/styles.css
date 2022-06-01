@@ -1,0 +1,27 @@
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* CSS COLORS HELPERS*/
+
+.bg-orange, .bg-orange:visited, .bg-orange:active, .bg-orange:focus {
+    background-color: rgba(236,103,7,1);
+}
+.bg-green, .bg-green:visited, .bg-green:active, .bg-green:focus {
+    background-color: rgb(138, 197, 58);
+}
+.bg-white, .bg-white:visited, .bg-white:active, .bg-white:focus {
+    background-color: #fff;
+}
+
+.txt-orange, .txt-orange:visited, .txt-orange:active, .txt-orange:focus {
+    color:rgba(236,103,7,1)
+}
+
+.txt-green, .txt-green:visited, .txt-green:active, .txt-green:focus {
+    color:rgb(138, 197, 58)
+}
+
+.btn:hover {
+    background-color: #fff;
+    border-color: rgb(33, 37, 41);
+    color:rgb(33, 37, 41) !important;
+}
