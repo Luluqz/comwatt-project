@@ -19,7 +19,7 @@ class AppFixtures extends Fixture
             $count = mt_rand(1, 2);
             $product = new Product();
             $product->setTitle($this->faker->realText(30));
-            $product->setCountry($this->faker->countryISOAlpha3);
+            $product->setCountry($this->faker->countryISOAlpha3());
             $product->setYear($this->faker->dateTime('now'));
             $product->setDescription($this->faker->sentence(20));
             $product->setPrice($this->faker->randomFloat(1,5,40));
