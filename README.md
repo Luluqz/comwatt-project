@@ -42,6 +42,7 @@ composer install
 composer doctrine:database:create
 composer doctrine:migrations:migrate
 composer doctrine:fixtures:load
+symfony serve -d --no-tls
 ```
 ### angular part:
 ```
