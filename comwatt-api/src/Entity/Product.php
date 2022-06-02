@@ -32,6 +32,7 @@ class Product
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;
 
+    // genre column could have had his own entity with manyToMany relation on product
     #[ORM\Column(type: 'array')]
     #[Assert\Count(min: 1)]
     #[Assert\All([

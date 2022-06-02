@@ -82,6 +82,7 @@ export class CartComponent implements OnInit {
     (quantity > 0) ? this.updateCartObj(cartObj, true) : this.deleteCartObj(cartObj);
   }
 
+  // cookie could have ben use instead of session storage for more persistent datas
   public setSessionStorage(cart: Cart): void{
     sessionStorage.setItem('cart', JSON.stringify(cart))
   }
