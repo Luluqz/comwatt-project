@@ -1,34 +1,7 @@
 .wrapper-product {
     max-height: calc(100vh - 94px);
-    /* -ms-overflow-style: none;  
-    scrollbar-width: none;   */
     overflow-y: scroll;
 }
-
-.wrapper-product::-webkit-scrollbar {
-    /* display: none; */
-  }
-
-/* custom scrollbar */
-/* .wrapper-product::-webkit-scrollbar {
-    width: 20px;
-}
-  
-.wrapper-product::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-.wrapper-product::-webkit-scrollbar-thumb {
-    background-color: #d6dee1;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-}
-
-.wrapper-product::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf;
-} */
-
 
 .wrapper-product::-webkit-scrollbar{
 	width: 10px;

@@ -59,5 +59,10 @@ ng serve
 ```
 Visit http://localhost:4200
 
-
+###unit test
+tested component src/app/component/cart
+```
+cd comwatt-ng
+ng test
+```
 
